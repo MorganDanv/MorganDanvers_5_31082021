@@ -1,0 +1,31 @@
+
+on créé une fonction qui calcule les moyennes (qui reçoit en entrée un array de nombres)
+
+SI (je ne reçoit pas d'élements)
+ALORS 
+    je renvoie 0 (return 0)
+SINON je déroule l'algo suivant
+    je créé une variable qui va stocker la somme
+    pour chaque élements de l'array (for)
+        j'ajoute la valeur de l'élement à la somme(+=)
+
+    je divise la somme par le nombre d"élements (/)
+    je renvoie le résultat (return calculé)
+
+function toto () {
+
+    return ( titi / 12)
+}
+
+let tutu = 12
+function titi () {
+    let tutu = 13
+    for(i in [1,2,3,4]){
+        if(i == 3){ exit i }
+        echo i
+        
+    }
+    echo (titi.)tutu (13)
+    return ( titi / 12)
+}
+echo (global.)tutu (12)
