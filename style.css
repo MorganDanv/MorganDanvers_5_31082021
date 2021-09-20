@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Delicious';
+    src: local('Documents/P5-Danvers-Morgan/Fonts/Delicious.tff.ttf') format("truetype");
+}
+
+body {
+    font-family: "Delicious";
+}
+
+.box_form {
+    display: flex;
+    justify-content: end;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.box_dropdown {
+    display: flex;
+    justify-content: start;
+    padding-top: 1rem;
+}
+
+.box_logo {
+    display: flex;
+    justify-content: center;
+    background-color: #f3e9f1;
+}
+
+.title_center {
+    text-align: center;
+}
+
+.search_bar {
+    width: 30rem;
+}
+
+label {
+    display: block;
+    font: 1rem 'Delicious';
+}
+
+
+
+.box_logo__image {
+    width: 350px;
+}
