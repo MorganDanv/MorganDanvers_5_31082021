@@ -13,17 +13,17 @@ body {
     text-decoration: none;
 }
 
-.box_form {
+.box_button_group {
     display: flex;
-    justify-content: end;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    justify-content: flex-end;
 }
 
-.box_dropdown {
-    display: flex;
-    justify-content: start;
+.box_button {
     padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
 }
 
 .box_logo {
@@ -51,8 +51,16 @@ label {
     width: 350px;
 }
 
-.box_liens {
-    height: 300px;
+.links_box {
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+    margin-top: 3rem;
+}
+
+.unique_link {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .icon_size {
