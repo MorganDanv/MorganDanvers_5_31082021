@@ -1,12 +1,32 @@
-@font-face {
-    font-family: 'Delicious';
-    src: local('Documents/P5-Danvers-Morgan/Fonts/Delicious.tff.ttf') format("truetype");
-}
-
 body {
-    font-family: "Delicious";
+    font-family: 'Roboto', sans-serif;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.group-cards {
+    display: flex;
+}
+
+.card {
+    height: 30rem;
+    background-color: rgba(0, 195, 255, 0.692);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    box-shadow: black;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+
+}
+
+.bonjour {
+    color: red;
+}
+
+img {
+    max-width: 100%;
 }
 
 .button_no_deco {
@@ -42,13 +62,13 @@ body {
 
 label {
     display: block;
-    font: 1rem 'Delicious';
+    font: 1rem 'Roboto, sans-serif';
 }
 
 
 
-.box_logo__image {
-    width: 350px;
+.box_logo_image {
+    height: 3rem;
 }
 
 .links_box {
