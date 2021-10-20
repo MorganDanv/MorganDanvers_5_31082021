@@ -13,12 +13,12 @@ for (const teddy of teddies) {
 
   const img = document.createElement('img')
   img.src = teddy.imageUrl
+  img.classList.add("card-img-top")
   link.appendChild(img)
-
   card.appendChild(link)
 
   cardsDiv.appendChild(card)
-const nameDiv = document.createElement('p')
+const nameDiv = document.createElement('h3')
 card.appendChild(nameDiv)
 nameDiv.innerHTML="nom:" + teddy.name
 
@@ -29,16 +29,35 @@ cardsDiv.appendChild(card)
 
 const priceDiv = document.createElement('p')
 card.appendChild(priceDiv)
-priceDiv.innerHTML="prix:" + teddy.price
+priceDiv.innerHTML="prix: " +(teddy.price/100).toFixed(2) +"€"
+ 
 
-const colorDiv=document.createElement('p')
+const colorDiv=document.createElement('div')
 card.appendChild(colorDiv)
-colorDiv.innerHTML= teddy.colors
+colorDiv.classList.add('color-lozenge')
 
 
-if (teddy.price> 3000) {
-  descriptionDiv.classList.add('bonjour')
-}
+const colorDivA=document.createElement('div')
+card.appendChild(colorDivA)
+colorDivA.classList.add('color-lozenge-a')
+
+
+const colorDivB=document.createElement('div')
+card.appendChild(colorDivB)
+colorDivB.classList.add('color-lozenge-b')
+
+
+const colorDivC=document.createElement('div')
+card.appendChild(colorDivC)
+colorDivC.classList.add('color-lozenge-c')
+
+const moncercle = document.getElementById('cercle')
+
+
+
+// if (teddy.price> 3000) {
+//   descriptionDiv.classList.add('bonjour')
+// }
 
 }
 }
@@ -52,3 +71,11 @@ fetch("http://localhost:3000/api/teddies")
   createcard (response);
 })
 .catch(error => console.error(error));
+
+fetch("http://localhost:3000/api/teddies/5be9c8541c9d440000665243")
+.then(response => response.json())
+.then(response => {
+  createcard (response);
+})
+.catch(error => console.error(error));
+
