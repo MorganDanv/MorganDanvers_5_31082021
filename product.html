@@ -23,14 +23,14 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"
         defer>
     </script>
-    <script src="js/index.js" defer></script>
+    <script src="js/product.js" defer></script>
 </head>
 
 <body class="bg-white">
     <header>
         <div class="box_button_group">
             <div class="box_button">
-                <a class="btn btn-primary" href="product.html" role="button">Panier <i class="fas fa-shopping-basket">
+                <a class="btn btn-primary" href="cart.html" role="button">Panier <i class="fas fa-shopping-basket">
                     </i></a>
             </div>
             <div class="box_button">
@@ -46,57 +46,25 @@
 
     </header>
     <main>
-        <div class="group-cards">
-            <div class="card">
-                <img src="backend/images/teddy_1.jpg">
-                <p>nom:Norbert</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
-                <p>prix:2900</p>
-                <p>Tan,Chocolate,Black,White</p>
-            </div>
+        <div class="row">
+            <div class="col-6 col-sm-4"></div>
 
-            <div class="card">
-                <img src="backend/images/teddy_2.jpg">
-                <p>nom:Arnold</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
-                <p>prix:3900</p>
-                <p>Pale brown,Dark brown,White</p>
-            </div>
-
-            <div class="card">
-                <img src="backend/images/teddy_3.jpg">
-                <p>nom:Lenny and Carl</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
-                <p>prix:5900</p>
-                <p>Brown</p>
-            </div>
-
-            <div class="card">
-                <img src="backend/images/teddy_4.jpg">
-                <p>nom:Gustav</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
-                <p>prix:4500</p>
-                <p>Brown,Blue,Pink</p>
-            </div>
-
-            <div class="card">
-                <img src="backend/images/teddy_5.jpg">
-                <p>nom:Garfunkel</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
-                <p>prix:5500</p>
-                <p>Beige,Tan,Chocolate</p>
-            </div>
+            <div id="unicCard"></div>
+        </div>
+        <div class="col-6 col-sm-4">
+            <h2 id="productName"> </h2>
+        </div>
+        <div class="col-6 col-sm-4">
+            <img id="productImage">
+        </div>
+        <div class="col-6 col-sm-4">
+            <p id="productDescription"></p>
+        </div>
+        <div class="col-6 col-sm-4">
+            <p id="productPrice"></p>
         </div>
 
-
-
-
-
+        </div>
 
     </main>
     <footer>

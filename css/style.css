@@ -10,69 +10,53 @@ body {
 
 .card {
     height: 50rem;
-    background-color: rgba(0, 195, 255, 0.692);
+    background-color: rgba(197, 197, 197, 0.692);
     margin-left: 1rem;
     margin-right: 1rem;
-    box-shadow: black;
     cursor: pointer;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 1rem;
+    border-radius: 1rem;
+    display: flex;
+}
 
+.color-box {
+    display: flex;
+    justify-content: space-between;
 }
 
 .color-lozenge {
     width: 50px;
     height: 50px;
     border: none;
-    background-color: #d2b48c;
     border-radius: 50px;
     text-align: center;
     cursor: pointer;
     margin-bottom: 0.5rem;
 }
 
-.color-lozenge-a {
-    width: 50px;
-    height: 50px;
-    border: none;
-    background-color: #5a3a22;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-
+.link-card {
+    border-radius: 20px;
+    margin-top: 1rem;
+    text-decoration: none;
+    text-align: center;
 }
 
-.color-lozenge-b {
-    width: 50px;
-    height: 50px;
-    border: none;
-    background-color: #000000;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-}
-
-.color-lozenge-c {
-    width: 50px;
-    height: 50px;
-    border: none;
-    background-color: #ffffff;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
+.link-card:hover {
+    text-decoration: none;
+    color: black;
 }
 
 
-/* .bonjour {
-    color: red;
-} */
 
-img {
+.card-img-top {
     height: 14rem;
     object-fit: cover;
     padding-bottom: 1rem;
 }
+
+
 
 .button_no_deco {
     text-decoration: none;
@@ -131,4 +115,28 @@ label {
 .icon_size {
     font-size: 2rem;
 
+}
+
+.prod-card {
+    height: 35rem;
+    background-color: rgba(197, 197, 197, 0.692);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.product-img-top {
+    height: 30rem;
+    object-fit: cover;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.div-flex {
+    display: flex;
+    flex-direction: column;
 }
