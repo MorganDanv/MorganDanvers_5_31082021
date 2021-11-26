@@ -65,19 +65,20 @@ const addToCart = () => {
   // key -> cart
   // value -> array
   // tenter de récupérer le panier
-  if (sessionStorage.getItem("cart")) {
-    var data = sessionStorage.getItem("cart");
-  } else {
-    var data = [];
+  let cartData = JSON.parse(localStorage.getItem("cart"));
+
+  if (cartData === null) {
+    // le panier n'existe pas en session, on le crée
+    cartData = [];
   }
 
-  let coco = document.getElementById("selectColor");
-  let cocoS = coco.options[coco.selectedIndex].text;
+  let colors = document.getElementById("selectColor");
+  let color = colors.options[colors.selectedIndex].text;
   let buyItem = product;
-  buyItem.color = cocoS;
-  data.push(buyItem);
-  sessionStorage.setItem("cart", data);
-  alert(data);
+  buyItem.color = color;
+  cartData.push(buyItem);
+
+  localStorage.setItem("cart", JSON.stringify(cartData));
 
   // SI (la valeur est nulle )
   // ALORS créer la key avec comme valeur un array
