@@ -40,39 +40,37 @@
         <div class="box_logo">
             <img class="box_logo_image" src="img/logo_orinoco.png" alt="logo_orinoco">
         </div>
-        <h1 class="title_center">Bienvenue sur Orinoco</h1>
+        <h2 class="title_center">Votre panier Orinoco</h2>
 
-        <h2>Découvrez nos ours en peluche haut de gamme </h2>
-        <label for="site-search">Rechercher nos produits:</label>
-        <div class="input-group mb-3 search_bar">
-            <input type="search" class="form-control" aria-label="Rechercher">
-            <div class="input-group-append">
-                <button class="btn btn-outline-primary" type="button">Rechercher <i class="fas fa-search"></i></button>
-            </div>
-        </div>
 
         <nav class="navbar navbar-expand bg-white navbar-dark">
         </nav>
     </header>
     <main>
-        <div class="card">
-            <div class="name">
+        <div id="cartContent">
 
-            </div>
-            <div class="color">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prix</th>
+                        <th>Couleur</th>
+                        <th>Quantité</th>
+                        <th>Prix total</th>
+                    </tr>
 
-            </div>
-            <div class="price">
 
-            </div>
-            <div class="description">
+                </thead>
+                <tbody id="tableContent">
 
-            </div>
-            <div class="image">
+                </tbody>
+            </table>
 
-            </div>
-
+            contenu de votre panier:
         </div>
+        <p id="cartEmpty">
+            votre panier est vide
+        </p>
     </main>
 
     <footer>

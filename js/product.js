@@ -15,16 +15,10 @@ fetch("http://localhost:3000/api/teddies/" + productId)
   .catch((error) => console.error(error));
 
 const showProduct = (product) => {
-  const prodCard = document.createElement("div");
-  prodCard.classList.add("prod-card");
-
   const productImage = document.getElementById("productImage");
   productImage.src = product.imageUrl;
   productImage.alt = product.name;
   productImage.classList.add("product-img-top");
-
-  const divFlex = document.createElement("div");
-  divFlex.classList.add("div-flex");
 
   const productName = document.getElementById("productName");
   productName.innerHTML = product.name;
@@ -35,9 +29,8 @@ const showProduct = (product) => {
   const productPrice = document.getElementById("productPrice");
   productPrice.innerHTML = (product.price / 100).toFixed(2) + "€";
 
-  const mySelect = document.createElement("select");
+  const mySelect = document.getElementById("productColors");
   mySelect.classList.add("select-color");
-  mySelect.id = "selectColor";
   const array_colors = product.colors;
   array_colors.forEach((color) => {
     const option = document.createElement("option");
@@ -45,19 +38,10 @@ const showProduct = (product) => {
     option.innerHTML = color;
     mySelect.appendChild(option);
   });
-  const productButton = document.createElement("BUTTON");
+  const productButton = document.getElementById("ProductToCart");
   productButton.classList.add("button-basket");
   productButton.innerHTML = "Ajouter au panier";
   productButton.addEventListener("click", addToCart);
-
-  prodCard.appendChild(productImage);
-  divFlex.appendChild(productName);
-  divFlex.appendChild(productDescription);
-  divFlex.appendChild(productPrice);
-  divFlex.appendChild(mySelect);
-  divFlex.appendChild(productButton);
-  prodCard.appendChild(divFlex);
-  unicCard.appendChild(prodCard);
 };
 
 const addToCart = () => {
@@ -72,7 +56,8 @@ const addToCart = () => {
     cartData = [];
   }
 
-  let colors = document.getElementById("selectColor");
+  let colors = document.getElementById("productColors");
+  console.log(colors);
   let color = colors.options[colors.selectedIndex].text;
   let buyItem = product;
   buyItem.color = color;
