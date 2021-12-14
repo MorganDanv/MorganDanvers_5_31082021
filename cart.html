@@ -48,15 +48,13 @@
     </header>
     <main>
         <div id="cartContent">
-
+            contenu de votre panier:
             <table>
                 <thead>
                     <tr>
                         <th>Nom</th>
-                        <th>Prix</th>
                         <th>Couleur</th>
-                        <th>Quantité</th>
-                        <th>Prix total</th>
+                        <th>Prix unitaire</th>
                     </tr>
 
 
@@ -64,13 +62,101 @@
                 <tbody id="tableContent">
 
                 </tbody>
+                <tfooter>
+                    <tr>
+                        <th>Montant total</th>
+                        <th> <a class="btn btn-primary" id="emptyBasket" role="button">Vider le panier <i
+                                    class="fas fa-shopping-basket">
+                                </i></a></th>
+
+                    </tr>
+                </tfooter>
             </table>
 
-            contenu de votre panier:
         </div>
         <p id="cartEmpty">
-            votre panier est vide
+            Votre panier est vide
         </p>
+
+        <section>
+
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-4">
+                    <label for="validationCustom01" class="form-label">Nom de famille</label>
+                    <input type="text" class="form-control" id="validationCustom01" value="Otto" required>
+                    <div class="valid-feedback">
+                        Choisissez un nom de famille
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" id="validationCustom02" value="Damien" required>
+                    <div class="valid-feedback">
+                        Choisissez un prénom
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom03" class="form-label">Adresse e-mail</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" class="form-control" id="validationCustom03"
+                            aria-describedby="inputGroupPrepend" required>
+                        <div class="invalid-feedback">
+                            Choisissez un e-mail
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationCustom04" class="form-label">Ville</label>
+                    <input type="text" class="form-control" id="validationCustom04" required>
+                    <div class="invalid-feedback">
+                        Choisissez une ville
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="validationCustom05" class="form-label">Adresse</label>
+                    <input type="text" class="form-control" id="validationCustom05" required>
+                    <div class="invalid-feedback">
+                        Choisissez une adresse
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="validationCustom06" class="form-label">Département</label>
+                    <select class="form-select" id="validationCustom06" required>
+                        <option selected disabled value="">Choisir</option>
+                        <option>...</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Choisissez un département
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationCustom07" class="form-label">Code postal</label>
+                    <input type="text" class="form-control" id="validationCustom07" required>
+                    <div class="invalid-feedback">
+                        Choisissez un code postal
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Accepter les termes et conditions
+                        </label>
+                        <div class="invalid-feedback">
+                            vous devez accepter avant de valider
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Valider le formulaire</button>
+                </div>
+            </form>
+
+        </section>
+
     </main>
 
     <footer>
