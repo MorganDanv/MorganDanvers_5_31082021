@@ -4,7 +4,7 @@ function createcard(teddies) {
   for (const teddy of teddies) {
     const card = document.createElement("div");
     card.classList.add("card");
-    card.classList.add("col-16");
+    card.classList.add("col-12");
     card.classList.add("col-sm-2");
 
     const link = document.createElement("a");

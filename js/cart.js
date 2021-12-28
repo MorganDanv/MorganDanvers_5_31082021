@@ -59,14 +59,16 @@ if (cartData) {
 } else {
   // le panier est vide
   cartContent.style.display = "none";
+  display_form.style.display = "none";
+  display_section.style.display = "none";
 }
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
+const validedForm = () => {
   "use strict";
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll(".needs-validation");
+  let forms = document.querySelectorAll(".needs-validation");
 
   // Loop over them and prevent submission
   Array.prototype.slice.call(forms).forEach(function (form) {
@@ -76,6 +78,10 @@ if (cartData) {
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
+        } else {
+          event.preventDefault();
+          event.stopPropagation();
+          sendOrder(form);
         }
 
         form.classList.add("was-validated");
@@ -83,4 +89,50 @@ if (cartData) {
       false
     );
   });
-})();
+};
+validedForm();
+
+const sendOrder = (form) => {
+  //récupérer les infos du formulaire => objet json contact
+
+  let contact = {
+    lastName: form[0].value,
+    firstName: form[1].value,
+    email: form[2].value,
+    address: form[3].value,
+    city: form[4].value,
+  };
+
+  // créer un tableau products qui contient les Id des produits dans le panier
+
+  let products = [];
+  for (i of cartData) {
+    products.push(i._id);
+  }
+
+  // envoyer une requête fetch POST avec contact et products
+  fetch("http://localhost:3000/api/teddies/order", {
+    method: "POST",
+    body: JSON.stringify({ contact, products }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then((response) => {
+      localStorage.clear();
+      localStorage.setItem("contact", JSON.stringify(contact));
+      localStorage.setItem("total", montantTotal);
+      localStorage.setItem("orderId", response.orderId);
+
+      window.location.href = "confirmation.html";
+    })
+    .catch((error) => {
+      alert("Erreur : " + error);
+    });
+};
+// mettre les infos de la commande en local storage et rediriger vers confirmation.js
