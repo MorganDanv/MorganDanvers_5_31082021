@@ -15,7 +15,7 @@ let avecQuantite = [];
 // - si il est deja la, je rajoute 1 a sa quantite
 // - si il est pas la, insere nounours dans avecQuantite, en lui mettant sa quantite a 1
 let montantTotal = 0;
-
+// la fonction crée un tableau de chaques produits selectionnés par l'utilisateur
 if (cartData) {
   // le panier est rempli
   cartEmpty.style.display = "none";
@@ -47,7 +47,7 @@ if (cartData) {
     style: "currency",
     currency: "EUR",
   }).format(montantTotal / 100);
-
+  // la fonction vide les données du local storage et indique que le panier est vide
   const emptyBasket = document.getElementById("emptyBasket");
   emptyBasket.addEventListener("click", (e) => {
     localStorage.removeItem("cart");
@@ -57,17 +57,16 @@ if (cartData) {
 
   console.log(montantTotal);
 } else {
-  // le panier est vide
+  // le panier est vide la fonction masque le tableau
   cartContent.style.display = "none";
   display_form.style.display = "none";
   display_section.style.display = "none";
 }
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// La fonction indique si les champs du formulaire son correctement rempli
 const validedForm = () => {
   "use strict";
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
   let forms = document.querySelectorAll(".needs-validation");
 
   // Loop over them and prevent submission

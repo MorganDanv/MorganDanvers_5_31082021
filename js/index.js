@@ -1,3 +1,4 @@
+// la fonction crée la carte générale des produits
 function createcard(teddies) {
   const cardsDiv = document.getElementById("products");
 
@@ -58,7 +59,7 @@ function createcard(teddies) {
     cardsDiv.appendChild(card);
   }
 }
-
+// le fetch methode GET récupère les produits en objets JSON
 fetch("http://localhost:3000/api/teddies")
   .then((response) => response.json())
   .then((response) => {

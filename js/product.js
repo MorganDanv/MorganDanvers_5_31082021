@@ -4,7 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 const productId = urlParams.get("id");
 
 let product = "";
-
+// le fetch methode GET récupère les ID des produits sur le serveur
 fetch("http://localhost:3000/api/teddies/" + productId)
   .then((response) => response.json())
   .then((response) => {
@@ -13,7 +13,7 @@ fetch("http://localhost:3000/api/teddies/" + productId)
     product = response;
   })
   .catch((error) => console.error(error));
-
+// La fonction créer une carte personalisée pour chaque produit individuellement
 const showProduct = (product) => {
   const productImage = document.getElementById("productImage");
   productImage.src = product.imageUrl;
@@ -43,7 +43,7 @@ const showProduct = (product) => {
   productButton.innerHTML = "Ajouter au panier";
   productButton.addEventListener("click", addToCart);
 };
-
+// La fonction tente de récupérer les objets du panier si le panier n'existe pas elle le crée
 const addToCart = () => {
   // session Storage
   // key -> cart
