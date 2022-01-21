@@ -50,7 +50,7 @@ function createcard(teddies) {
       } else if (color == "Dark brown") {
         colorDiv.style.backgroundColor = "#654321";
       } else {
-        colorDiv.style.backgroundColor = color.toLowerCase().replace(/ /g, "@");
+        colorDiv.style.backgroundColor = color.toLowerCase();
       }
       card.appendChild(colorDiv);
       boxColor.appendChild(colorDiv);

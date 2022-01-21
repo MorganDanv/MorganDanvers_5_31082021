@@ -52,7 +52,7 @@ if (cartData) {
   emptyBasket.addEventListener("click", (e) => {
     localStorage.removeItem("cart");
     alert("le panier a été vider");
-    window.location.href = "cart.html";
+    //window.location.href = "cart.html";
   });
 
   console.log(montantTotal);
