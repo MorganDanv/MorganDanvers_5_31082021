@@ -3,11 +3,7 @@ const ContactJson = localStorage.getItem("contact");
 const Total = localStorage.getItem("total");
 const Id = localStorage.getItem("orderId");
 
-if (Id == null || Total == null || Contact == null) {
-  window.location.href = "index.html";
-}
-
-// on transforme l'objet contact  en objet JSON
+// on transforme l'objet javascript contact  en objet JSON
 const Contact = JSON.parse(ContactJson);
 // la fonction valide la commande de l'utilisateur via une phrase récapitulative des achats, si la commande est nule redirige vers la page d'accueil
 orderValidation();
@@ -25,6 +21,10 @@ function orderValidation() {
     "€," +
     " a bien été enregistrée.";
   container_recap.appendChild(pOrder);
+
+  if (Id == null || Total == null || Contact == null) {
+    window.location.href = "index.html";
+  }
 }
 
 // il faut remplir le tableau en fonction des différentes étapes que réalise une fonction
