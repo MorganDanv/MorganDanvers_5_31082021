@@ -80,9 +80,35 @@ const validedForm = () => {
         } else {
           event.preventDefault();
           event.stopPropagation();
-          sendOrder(form);
-        }
 
+          let validMail = form[2].value.match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          );
+          let validNom = form[0].value
+            .toLowerCase()
+            .match(/^[a-z-\é\è\ê\ë\ï]+$/);
+          let validPrenom = form[1].value
+            .toLowerCase()
+            .match(/^[a-z-\é\è\ê\ë\ï]+$/);
+
+          if (!validNom) {
+            alert(
+              "Le nom ne peut contenir que des lettres compris entre a et z"
+            );
+          } else {
+            if (!validPrenom) {
+              alert(
+                "Le prénom ne peut contenir que des lettres compris entre a et z"
+              );
+            } else {
+              if (!validMail) {
+                alert("L'adresse email est invalide");
+              } else {
+                sendOrder(form);
+              }
+            }
+          }
+        }
         form.classList.add("was-validated");
       },
       false
